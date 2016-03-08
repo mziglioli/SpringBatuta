@@ -37,33 +37,17 @@ public class LoginTest {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 	}
 	
-//	@Test
-//	public void getUsers() throws Exception {
-//		MvcResult s = mockMvc.perform(get("/public/users"))
-//                .andExpect(status().isOk())
-//                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-//                .andReturn();
-//		
-//		MockHttpServletResponse result = s.getResponse();
-////		assertEquals(30,s..getQtdUsers().longValue());
-//		System.out.println(result);
-//		
-//	}
-//	
 	@Test
 	public void login() throws Exception {
 		UserDto userDto = new UserDto();
 		MvcResult s = mockMvc.perform(post("/public/login", userDto))
-//                .andExpect(status().isOk())
-//                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andReturn();
 		
 		MockHttpServletResponse result = s.getResponse();
-//		assertEquals(30,s..getQtdUsers().longValue());
+		assertEquals(30,s..getQtdUsers().longValue());
 		System.out.println(result);
 		
 	}
-//	
-
-
 }
